@@ -1,5 +1,6 @@
 package com.springboot.backend.apirest.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Pokemon {
@@ -10,6 +11,7 @@ public class Pokemon {
 	String weight;
 	String name;
 	Evolution evolution;
+	List<Child> forms;
 	
 	public Pokemon() {
 	}
@@ -51,6 +53,14 @@ public class Pokemon {
 		return name;
 	}
 
+	public List<Child> getForms() {
+		return forms;
+	}
+
+	public void setForms(List<Child> forms) {
+		this.forms = forms;
+	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -85,6 +95,14 @@ public class Pokemon {
 			}
 		}
 		return allType;
+	}
+	
+	public List<String> getFormsUrls(){
+		List<String> formsUrls = new ArrayList<String>();
+		for (Child cForm : this.getForms()) {
+			formsUrls.add(cForm.getUrl());
+		}
+		return formsUrls;
 	}
 	
 }

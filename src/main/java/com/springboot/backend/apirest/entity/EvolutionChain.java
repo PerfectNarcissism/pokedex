@@ -1,6 +1,5 @@
 package com.springboot.backend.apirest.entity;
 
-import java.util.Iterator;
 import java.util.List;
 
 public class EvolutionChain {
