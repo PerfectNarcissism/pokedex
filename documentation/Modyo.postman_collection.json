@@ -1,0 +1,63 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Modyo",
+		"_postman_id": "fdcf7e71-5b90-c903-79f7-184a8e6d51fb",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://pokedex-deploy.herokuapp.com/pokedex/pokemon/burmy",
+			"request": {
+				"url": "https://pokedex-deploy.herokuapp.com/pokedex/pokemon/burmy",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "archivo",
+							"value": "",
+							"description": "",
+							"type": "file"
+						},
+						{
+							"key": "id",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://pokedex-deploy.herokuapp.com/pokedex/pokemon/detail/pikachu",
+			"request": {
+				"url": "https://pokedex-deploy.herokuapp.com/pokedex/pokemon/detail/pikachu",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic Sk9SR0UuR09OWkFMRVo6T3JiaXMyMDIwKjE=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"pr_requisition_status\": {\r\n    \"@xmlns\": \"http://xmlns.oracle.com/apps/xbol/rest/IntegracionWA/pr_requisition_status\",\r\n    \"RESTHeader\": {\r\n      \"xmlns\": \"http://xmlns.oracle.com/apps/xbol/rest/IntegracionWA/header\",\r\n      \"Responsibility\": \"ADC_CO_PO_COMPRADOR\",\r\n      \"RespApplication\": \"PO\",\r\n      \"SecurityGroup\": \"STANDARD\",\r\n      \"NLSLanguage\": \"AMERICAN\",\r\n       \"Org_Id\" :\"1381\"\r\n    },\r\n    \"InputParameters\": {\r\n      \"PN_DOCUMENTO_WA\": 1021\r\n    }\r\n  }\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
