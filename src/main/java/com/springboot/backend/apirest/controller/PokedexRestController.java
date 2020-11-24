@@ -25,6 +25,15 @@ public class PokedexRestController {
 	
 	@Autowired
 	private PokedexServiceImpl pokedexService;
+	
+	@GetMapping("/")
+	public String index(){
+		String response = "";
+		response+="API POKEDEX \n";
+		response+="Consulta Pokemon: https://pokedex-deploy.herokuapp.com/pokedex/pokemon/burmy \n";
+		response+="Detalle Pokemon: https://pokedex-deploy.herokuapp.com/pokedex/pokemon/detail/pikachu";
+		return response;
+	}
 
 	@GetMapping("/pokemon/{name}")
 	public ResponseEntity<?> getPokemon(@PathVariable String name){
