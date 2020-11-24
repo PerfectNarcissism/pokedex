@@ -19,6 +19,7 @@ import com.springboot.backend.apirest.entity.Characteristics;
 import com.springboot.backend.apirest.entity.Evolution;
 import com.springboot.backend.apirest.entity.EvolutionChain;
 import com.springboot.backend.apirest.resttemplate.RestTemplateConfig;
+import com.springboot.backend.apirest.services.IPokedexService;
 
 @RestController
 @RequestMapping("/pokedex")
@@ -26,14 +27,14 @@ public class PokedexRestController {
 	
 	RestTemplate restTemplate;
 	private final static String LANG_EN="en";
+	private IPokedexService pokedexService;
 
 	@GetMapping("/pokemon/{name}")
 	public ResponseEntity<?> getPokemon(@PathVariable String name){
-		restTemplate = RestTemplateConfig.initRestTemplateForPdfAsByteArrayAndSelfSignedHttps();
 		Map<String, Object> response = new HashMap<String, Object>();
 		try {
 			Pokemon pokemon = new Pokemon();
-			pokemon=restTemplate.getForObject("https://pokeapi.co/api/v2/pokemon/"+name, Pokemon.class);
+			pokemon=pokedexService.getPokemon(name);
 			response.put("id", pokemon.getId());
 			response.put("name", pokemon.getName());
 			response.put("abilities", pokemon.getAllAbilities());
