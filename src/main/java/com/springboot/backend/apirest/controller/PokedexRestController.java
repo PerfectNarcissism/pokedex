@@ -29,9 +29,9 @@ public class PokedexRestController {
 	@GetMapping("/")
 	public String index(){
 		String response = "";
-		response+="API POKEDEX \n";
-		response+="Consulta Pokemon: https://pokedex-deploy.herokuapp.com/pokedex/pokemon/burmy \n";
-		response+="Detalle Pokemon: https://pokedex-deploy.herokuapp.com/pokedex/pokemon/detail/pikachu";
+		response+="<h1>API POKEDEX</h1>";
+		response+="<h3>Consulta Pokemon: https://pokedex-deploy.herokuapp.com/pokedex/pokemon/burmy</h3>";
+		response+="<h3>Detalle Pokemon: https://pokedex-deploy.herokuapp.com/pokedex/pokemon/detail/pikachu</h3>";
 		return response;
 	}
 
